@@ -9,64 +9,377 @@
             border: 1px solid black;
             border-collapse: collapse;
         }
+
+        #header {
+            border-left: 1px solid white;
+            border-right: 1px solid white;
+
+        }
     </style>
 </head>
+<script>
+    // setTimeout(function () { location.reload(); }, 100);
+</script>
 
 <body>
     <form action="http://localhost:80" method="POST">
-    <table style="width:100%">
-        <tr>
-        </tr>
-        <tr>
-            <td colspan="2">Name (Last Name First)
-                <input type="text" name="Name" id="">
+        <table style="width:100%;" id="personalInfo">
+            <h3>Personal information</h3>
+            <tr>
+            </tr>
+            <tr>
+                <td colspan="2">Name (Last Name First)
+                    <input type="text" name="Name">
+                </td>
+                <td colspan="2">Social Security No:
+                    <input type="text" name="SecNo">
+                </td>
+            </tr>
+            <tr>
+                <td>Present Address
+                    <input type="text" name="PresentAddr">
+                </td>
+                <td>City
+                    <input type="text" name="PresentCity">
+                </td>
+                <td>State
+                    <input type="text" name="PresentState">
+                </td>
+                <td>Zip code
+                    <input type="text" name="PresentZip">
+                </td>
+            </tr>
+            <tr>
+                <td>Permanent Address
+                    <input type="text" name="PermAddr">
+                </td>
+                <td>City
+                    <input type="text" name="PermCity">
+                </td>
+                <td>State
+                    <input type="text" name="PermState">
+                </td>
+                <td>Zip code
+                    <input type="text" name="PermZip">
+                </td>
+            </tr>
+            <tr>
+                <td>Phone No.
+                    <input type="text" name="Phone">
+                </td>
+                <td>Secondary Phone No.
+                    <input type="text" name="SecPhone">
+                </td>
+                <td colspan="2">Referred by:
+                    <input type="text" name="Referrer">
+                </td>
+            </tr>
+
+
+            <td colspan="4" id="header">
+                <h3> Employment Desired</h3>
             </td>
-            <td colspan="2">Social Security No:
-                <input type="text" name="SecNo" id="">
+
+
+            <tr>
+                <td>Position
+                    <input type="text" name="Position">
+                </td>
+                <td>Date you can start
+                    <input type="text" name="StartDate">
+                </td>
+                <td colspan="2">Salary desired
+                    <input type="text" name="DesiredSalary">
+                </td>
+            </tr>
+            <tr>
+                <td>Are you employed now? Yes
+                    <input type="radio" name="Employed" value="yes"> No
+                    <input type="radio" name="Employed" value="no">
+                </td>
+                <td colspan="3">
+                    If so,may we inquire of your present employer? Yes
+                    <input type="radio" name="Employed" value="yes"> No
+                    <input type="radio" name="Employed" value="no">
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>
+                    Ever applied to this company before?
+                    <input type="radio" name="applied" value="yes"> No
+                    <input type="radio" name="applied" value="no">
+                </td>
+
+
+                <td colspan="3">Where
+                    <textarea name="appliedLoc" cols="20" rows="1"></textarea>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Ever applied to this company before?
+                    <input type="radio" name="applied" value="yes"> No
+                    <input type="radio" name="applied" value="no">
+                </td>
+
+
+                <td colspan="3">Where
+                    <textarea name="appliedLoc" cols="20" rows="1"></textarea>
+                </td>
+            </tr>
+
+
+            <td colspan="4" id="header">
+                <h3>Education History</h3>
             </td>
-        </tr>
-        <tr>
-            <td>Present Address
-                <input type="text" name="PresentAddr" id="">
+
+            <tr style="background-color:blue;color:white">
+
+                <td></td>
+                <td>
+                    Name & Location of School
+                </td>
+                <td>
+                    Years attended
+                </td>
+                <td>
+                    Do you graduate
+                </td>
+                <td>
+                    Subjects Studied
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>HIGH SCHOOL</td>
+                <td>
+                    <input type="text" name="highSchoolName">
+                </td>
+                <td>
+                    <input type="text" name="highSchoolYear">
+                </td>
+                <td>
+                    <input type="text" name="highSchoolGraduated"> </td>
+                <td>
+                    <input type="text" name="highSchoolSubject"> </td>
+            </tr>
+
+
+            <tr>
+                <td>COLLEGE</td>
+                <td>
+                    <input type="text" name="collegeName">
+                </td>
+                <td>
+                    <input type="text" name="collegeYear">
+                </td>
+                <td>
+                    <input type="text" name="collegeGraduated"> </td>
+                <td>
+                    <input type="text" name="collegeSubject"> </td>
+            </tr>
+
+
+            <tr>
+                <td>TRADE,BUSINESS OR CORRESPONDENCE SCHOOL</td>
+                <td>
+                    <input type="text" name="TradeName">
+                </td>
+                <td>
+                    <input type="text" name="TradeYear">
+                </td>
+                <td>
+                    <input type="text" name="TradeGraduated"> </td>
+                <td>
+                    <input type="text" name="TradeSubject"> </td>
+            </tr>
+
+
+
+
+            <td colspan="4" id="header">
+                <h3>General Information</h3>
             </td>
-            <td>City
-                <input type="text" name="PresentCity" id="">
+
+            <tr>
+                <td colspan="5"> SUBJECT OF SPECIAL STUDY/RESEARCH WORK
+                    <input type="text" value="SpecialStudy">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="5"> SPECIAL TRAINING
+                    <input type="text" value="SpecialTraining">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="5"> SPECIAL SKILLS
+                    <input type="text" value="SpecialSkills">
+                </td>
+            </tr>
+            <tr>
+                <td> US MILITARY OR NAVAL SERVICE
+                    <input type="text" value="NavalService">
+                </td>
+                <td colspan="4">RANK
+                    <input type="text" name="Rank">
+                </td>
+            </tr>
+
+
+
+            <td colspan="4" id="header">
+                <h3>Former Employers</h3>
+                (LIST BELOW LAST FOUR EMPLOYERS,STARTING WITH LAST ONE FIRST)
             </td>
-            <td>State
-                <input type="text" name="PresentState" id="">
-            </td>
-            <td>Zip code
-                <input type="text" name="PresentZip" id="">
-            </td>
-        </tr>
-        <tr>
-            <td>Permanent Address
-                <input type="text" name="PermAddr" id="">
-            </td>
-            <td>City
-                <input type="text" name="PermCity" id="">
-            </td>
-            <td>State
-                <input type="text" name="PermState" id="">
-            </td>
-            <td>Zip code
-                <input type="text" name="PermZip" id="">
-            </td>
-        </tr>
-        <tr>
-            <td>Phone No.
-                <input type="text" name="Phone" id="">
-            </td>
-            <td>Secondary Phone No.
-                <input type="text" name="SecPhone" id="">
-            </td>
-            <td colspan="2">Referred by:
-                <input type="text" name="Referrer" id="">
-            </td>
-        </tr>
-        <input type="submit" >
-    </table>
-  
+
+            <tr style="background-color:blue;color:white">
+
+                <td>
+                    DATE MONTH AND YEAR
+                </td>
+                <td>
+                    NAME & ADDRESS OF EMPLOYER
+                </td>
+                <td>
+                    SALARY
+                </td>
+                <td>
+                    POSITION
+                </td>
+                <td>
+                    REASON FOR LEAVING
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>HIGH SCHOOL</td>
+                <td>
+                    <input type="text" name="highSchoolName">
+                </td>
+                <td>
+                    <input type="text" name="highSchoolYear">
+                </td>
+                <td>
+                    <input type="text" name="highSchoolGraduated"> </td>
+                <td>
+                    <input type="text" name="highSchoolSubject"> </td>
+            </tr>
+
+
+            <tr>
+                <td>COLLEGE</td>
+                <td>
+                    <input type="text" name="collegeName">
+                </td>
+                <td>
+                    <input type="text" name="collegeYear">
+                </td>
+                <td>
+                    <input type="text" name="collegeGraduated"> </td>
+                <td>
+                    <input type="text" name="collegeSubject"> </td>
+            </tr>
+
+
+            <tr>
+                <td>TRADE,BUSINESS OR CORRESPONDENCE SCHOOL</td>
+                <td>
+                    <input type="text" name="TradeName">
+                </td>
+                <td>
+                    <input type="text" name="TradeYear">
+                </td>
+                <td>
+                    <input type="text" name="TradeGraduated"> </td>
+                <td>
+                    <input type="text" name="TradeSubject"> </td>
+            </tr>
+
+            <tr>
+                <td>TRADE,BUSINESS OR CORRESPONDENCE SCHOOL</td>
+                <td>
+                    <input type="text" name="TradeName">
+                </td>
+                <td>
+                    <input type="text" name="TradeYear">
+                </td>
+                <td>
+                    <input type="text" name="TradeGraduated"> </td>
+                <td>
+                    <input type="text" name="TradeSubject"> </td>
+            </tr>
+            <tr>
+                <td>TRADE,BUSINESS OR CORRESPONDENCE SCHOOL</td>
+                <td>
+                    <input type="text" name="TradeName">
+                </td>
+                <td>
+                    <input type="text" name="TradeYear">
+                </td>
+                <td>
+                    <input type="text" name="TradeGraduated"> </td>
+                <td>
+                    <input type="text" name="TradeSubject"> </td>
+            </tr>
+            <tr>
+                <td>TRADE,BUSINESS OR CORRESPONDENCE SCHOOL</td>
+                <td>
+                    <input type="text" name="TradeName">
+                </td>
+                <td>
+                    <input type="text" name="TradeYear">
+                </td>
+                <td>
+                    <input type="text" name="TradeGraduated"> </td>
+                <td>
+                    <input type="text" name="TradeSubject"> </td>
+            </tr>
+            <tr>
+                <td>TRADE,BUSINESS OR CORRESPONDENCE SCHOOL</td>
+                <td>
+                    <input type="text" name="TradeName">
+                </td>
+                <td>
+                    <input type="text" name="TradeYear">
+                </td>
+                <td>
+                    <input type="text" name="TradeGraduated"> </td>
+                <td>
+                    <input type="text" name="TradeSubject"> </td>
+            </tr>
+            <tr>
+                <td>TRADE,BUSINESS OR CORRESPONDENCE SCHOOL</td>
+                <td>
+                    <input type="text" name="TradeName">
+                </td>
+                <td>
+                    <input type="text" name="TradeYear">
+                </td>
+                <td>
+                    <input type="text" name="TradeGraduated"> </td>
+                <td>
+                    <input type="text" name="TradeSubject"> </td>
+            </tr>
+
+
+
+
+
+
+
+
+
+
+
+
+        </table>
+        <input type="submit" value="submit">
+
     </form>
 </body>
 
