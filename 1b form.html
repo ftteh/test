@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <style>
-        table,
         th,
         td {
             border: 1px solid black;
@@ -11,15 +10,16 @@
         }
 
         #header {
-            border-left: 1px solid white;
-            border-right: 1px solid white;
+            border: 0;
+        }
 
+        input[type=text],
+        textarea {
+            width: 70%;
         }
     </style>
 </head>
-<script>
-    // setTimeout(function () { location.reload(); }, 100);
-</script>
+
 
 <body>
     <form action="http://localhost:80" method="POST">
@@ -93,14 +93,17 @@
                 </td>
             </tr>
             <tr>
-                <td>Are you employed now? Yes
+                <td>Are you employed now?
+                    <br> Yes
                     <input type="radio" name="Employed" value="yes"> No
+
                     <input type="radio" name="Employed" value="no">
                 </td>
                 <td colspan="3">
-                    If so,may we inquire of your present employer? Yes
-                    <input type="radio" name="Employed" value="yes"> No
-                    <input type="radio" name="Employed" value="no">
+                    If so,may we inquire of your present employer?
+                    <br> Yes
+                    <input type="radio" name="InquireEmployer" value="yes">No
+                    <input type="radio" name="InquireEmployer" value="no">
                 </td>
             </tr>
 
@@ -108,6 +111,7 @@
             <tr>
                 <td>
                     Ever applied to this company before?
+                    <br>Yes
                     <input type="radio" name="applied" value="yes"> No
                     <input type="radio" name="applied" value="no">
                 </td>
@@ -118,18 +122,6 @@
                 </td>
             </tr>
 
-            <tr>
-                <td>
-                    Ever applied to this company before?
-                    <input type="radio" name="applied" value="yes"> No
-                    <input type="radio" name="applied" value="no">
-                </td>
-
-
-                <td colspan="3">Where
-                    <textarea name="appliedLoc" cols="20" rows="1"></textarea>
-                </td>
-            </tr>
 
 
             <td colspan="4" id="header">
@@ -207,24 +199,24 @@
 
             <tr>
                 <td colspan="5"> SUBJECT OF SPECIAL STUDY/RESEARCH WORK
-                    <input type="text" value="SpecialStudy">
+                    <input type="text" name="SpecialStudy">
                 </td>
             </tr>
             <tr>
                 <td colspan="5"> SPECIAL TRAINING
-                    <input type="text" value="SpecialTraining">
+                    <input type="text" name="SpecialTraining">
                 </td>
             </tr>
             <tr>
                 <td colspan="5"> SPECIAL SKILLS
-                    <input type="text" value="SpecialSkills">
+                    <input type="text" name="SpecialSkills">
                 </td>
             </tr>
             <tr>
-                <td> US MILITARY OR NAVAL SERVICE
-                    <input type="text" value="NavalService">
+                <td colspan="2"> US MILITARY OR NAVAL SERVICE
+                    <input type="text" name="NavalService">
                 </td>
-                <td colspan="4">RANK
+                <td colspan="3">RANK
                     <input type="text" name="Rank">
                 </td>
             </tr>
@@ -257,126 +249,99 @@
 
 
             <tr>
-                <td>HIGH SCHOOL</td>
-                <td>
-                    <input type="text" name="highSchoolName">
+                <td>FROM
+                    <input type="text" name="emp1from">
                 </td>
-                <td>
-                    <input type="text" name="highSchoolYear">
+                <td rowspan="2">
+                    <textarea name="emp1info" cols="10" rows="2"></textarea>
                 </td>
-                <td>
-                    <input type="text" name="highSchoolGraduated"> </td>
-                <td>
-                    <input type="text" name="highSchoolSubject"> </td>
+                <td rowspan="2">
+                    <input type="text" name="emp1salary">
+                </td>
+                <td rowspan="2">
+                    <input type="text" name="emp1pos">
+                </td>
+                <td rowspan="2">
+                    <textarea name="emp1LeaveReason" cols="10" rows="2"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>TO
+                    <input type="text" name="emp1to">
+                </td>
             </tr>
 
 
             <tr>
-                <td>COLLEGE</td>
-                <td>
-                    <input type="text" name="collegeName">
+                <td>FROM
+                    <input type="text" name="emp2from">
                 </td>
-                <td>
-                    <input type="text" name="collegeYear">
+                <td rowspan="2">
+                    <textarea name="emp2info" cols="10" rows="2"></textarea>
                 </td>
-                <td>
-                    <input type="text" name="collegeGraduated"> </td>
-                <td>
-                    <input type="text" name="collegeSubject"> </td>
+                <td rowspan="2">
+                    <input type="text" name="emp2salary">
+                </td>
+                <td rowspan="2">
+                    <input type="text" name="emp2pos">
+                </td>
+                <td rowspan="2">
+                    <textarea name="emp2LeaveReason" cols="10" rows="2"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>TO
+                    <input type="text" name="emp2to">
+                </td>
             </tr>
 
 
             <tr>
-                <td>TRADE,BUSINESS OR CORRESPONDENCE SCHOOL</td>
-                <td>
-                    <input type="text" name="TradeName">
+                <td>FROM
+                    <input type="text" name="emp3from">
                 </td>
-                <td>
-                    <input type="text" name="TradeYear">
+                <td rowspan="2">
+                    <textarea name="emp3info" cols="10" rows="2"></textarea>
                 </td>
-                <td>
-                    <input type="text" name="TradeGraduated"> </td>
-                <td>
-                    <input type="text" name="TradeSubject"> </td>
-            </tr>
-
-            <tr>
-                <td>TRADE,BUSINESS OR CORRESPONDENCE SCHOOL</td>
-                <td>
-                    <input type="text" name="TradeName">
+                <td rowspan="2">
+                    <input type="text" name="emp3salary">
                 </td>
-                <td>
-                    <input type="text" name="TradeYear">
+                <td rowspan="2">
+                    <input type="text" name="emp3pos">
                 </td>
-                <td>
-                    <input type="text" name="TradeGraduated"> </td>
-                <td>
-                    <input type="text" name="TradeSubject"> </td>
+                <td rowspan="2">
+                    <textarea name="emp3LeaveReason" cols="10" rows="2"></textarea>
+                </td>
             </tr>
             <tr>
-                <td>TRADE,BUSINESS OR CORRESPONDENCE SCHOOL</td>
-                <td>
-                    <input type="text" name="TradeName">
+                <td>TO
+                    <input type="text" name="emp3to">
                 </td>
-                <td>
-                    <input type="text" name="TradeYear">
+            </tr>
+
+
+            <tr>
+                <td>FROM
+                    <input type="text" name="emp4from">
                 </td>
-                <td>
-                    <input type="text" name="TradeGraduated"> </td>
-                <td>
-                    <input type="text" name="TradeSubject"> </td>
+                <td rowspan="2">
+                    <textarea name="emp4info" cols="10" rows="2"></textarea>
+                </td>
+                <td rowspan="2">
+                    <input type="text" name="emp4salary">
+                </td>
+                <td rowspan="2">
+                    <input type="text" name="emp4pos">
+                </td>
+                <td rowspan="2">
+                    <textarea name="emp4LeaveReason" cols="10" rows="2"></textarea>
+                </td>
             </tr>
             <tr>
-                <td>TRADE,BUSINESS OR CORRESPONDENCE SCHOOL</td>
-                <td>
-                    <input type="text" name="TradeName">
+                <td>TO
+                    <input type="text" name="emp4to">
                 </td>
-                <td>
-                    <input type="text" name="TradeYear">
-                </td>
-                <td>
-                    <input type="text" name="TradeGraduated"> </td>
-                <td>
-                    <input type="text" name="TradeSubject"> </td>
             </tr>
-            <tr>
-                <td>TRADE,BUSINESS OR CORRESPONDENCE SCHOOL</td>
-                <td>
-                    <input type="text" name="TradeName">
-                </td>
-                <td>
-                    <input type="text" name="TradeYear">
-                </td>
-                <td>
-                    <input type="text" name="TradeGraduated"> </td>
-                <td>
-                    <input type="text" name="TradeSubject"> </td>
-            </tr>
-            <tr>
-                <td>TRADE,BUSINESS OR CORRESPONDENCE SCHOOL</td>
-                <td>
-                    <input type="text" name="TradeName">
-                </td>
-                <td>
-                    <input type="text" name="TradeYear">
-                </td>
-                <td>
-                    <input type="text" name="TradeGraduated"> </td>
-                <td>
-                    <input type="text" name="TradeSubject"> </td>
-            </tr>
-
-
-
-
-
-
-
-
-
-
-
-
         </table>
         <input type="submit" value="submit">
 
